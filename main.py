@@ -6,8 +6,15 @@ from constants import * #importing the constent so you get it too
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
     
+    clock = pygame.time.Clock()
+    timer = 60
+
+
+    dt = 0
+    
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))  
     
     while True:
         for event in pygame.event.get():
@@ -15,8 +22,11 @@ def main():
                 return  
         screen.fill("black")    
         pygame.display.flip()
+        dt = (clock.tick(timer))/1000
+        
 
-
+        
+        
 print ("Starting Asteroids!")
 print (f"Screen width: {SCREEN_WIDTH}")
 print (f"Screen height: {SCREEN_HEIGHT}")
